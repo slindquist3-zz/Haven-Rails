@@ -5,7 +5,7 @@ class ApplicationController < ActionController::API
 private
 
 def set_headers
-  if request.headers["HTTP_ORIGIN"]
+  if request.headers["HTTPS_ORIGIN"]
   # better way check origin
   # if request.headers["HTTP_ORIGIN"] && /^https?:\/\/(.*)\.some\.site\.com$/i.match(request.headers["HTTP_ORIGIN"])
     headers['Access-Control-Allow-Origin'] = request.headers["HTTP_ORIGIN"]
