@@ -19,17 +19,10 @@ Bundler.require(*Rails.groups)
 module YouAndMe
   class Application < Rails::Application
 
-    config.middleware.insert_before 0, "Rack::Cors" do
-      allow do
-        origins '*'
-        resource '*', :headers => :any, :methods => :any
-      end
-    end
-
     config.action_dispatch.default_headers.merge!({
-      'Access-Control-Allow-Origin' => '*',
-      'Access-Control-Request-Method' => '*'
-    })
+    'Access-Control-Allow-Origin' => '*',
+    'Access-Control-Request-Method' => '*'
+  })
 
      config.autoload_paths << Rails.root.join('lib')
     # Settings in config/environments/* take precedence over those specified here.
