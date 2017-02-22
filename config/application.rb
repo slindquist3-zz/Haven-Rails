@@ -24,6 +24,7 @@ module YouAndMe
      allow do
        origins '*'
        resource '*', :headers => :any, :methods => :any
+     end
    end
 
      config.autoload_paths << Rails.root.join('lib')
